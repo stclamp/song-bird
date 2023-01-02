@@ -24,12 +24,16 @@ const aboutAudio = document.querySelector(".answers__about-full--audio");
 const aboutDescription = document.querySelector(".answers__about-full--long");
 const correctImage = document.querySelector(".question__image img");
 const correctName = document.querySelector(".question__bird-name");
+const mainBlock = document.querySelector(".main");
+const finalBlock = document.querySelector(".final");
+const finalScore = document.querySelector(".final__score");
+const tryAgain = document.querySelector(".final__try-again");
 
 let answerItems;
 let currentCircle;
 
 let score = 0;
-let currentScore = 0;
+let currentScore = 1;
 let count = 0;
 
 getData().then((res) => {
@@ -47,28 +51,9 @@ function renderQuestions(res) {
       audioSong.src = item.audio;
       answerItems[i].addEventListener("click", () => {
         checkCurrentAnswer(item, answerItems[i], currentCircle[i]);
-        switch (currentScore) {
-          case 1:
-            score = score + 5;
-            break;
-          case 2:
-            score = score + 4;
-            break;
-          case 3:
-            score = score + 3;
-            break;
-          case 4:
-            score = score + 2;
-            break;
-          case 5:
-            score = score + 1;
-            break;
-          case 6:
-            score = score + 0;
-            break;
-          default:
-            break;
-        }
+        answerItems.forEach((item) => {
+          item.disabled = true;
+        });
       });
     }
     if (item.id !== randomNumber) {
@@ -105,25 +90,60 @@ function checkCurrentAnswer(item, answer, correct) {
     correct.classList.add("correct");
     correctImage.src = item.image;
     correctName.textContent = item.name;
-
+    switch (currentScore) {
+      case 1:
+        score = score + 5;
+        break;
+      case 2:
+        score = score + 4;
+        break;
+      case 3:
+        score = score + 3;
+        break;
+      case 4:
+        score = score + 2;
+        break;
+      case 5:
+        score = score + 1;
+        break;
+      case 6:
+        score = score + 0;
+        break;
+      default:
+        break;
+    }
+    scoreText.textContent = score;
+    finalScore.textContent = score;
     nextButton.disabled = false;
   }
 }
 
 nextButton.addEventListener("click", () => {
-  answerLists[count].classList.remove("active");
-  types[count].classList.remove("active");
-  count++;
-  answerLists[count].classList.add("active");
-  console.log(score);
-  scoreText.textContent = score;
-  currentScore = 1;
-  getData().then((res) => {
-    renderQuestions(res);
+  if (count < 5) {
+    answerLists[count].classList.remove("active");
+    types[count].classList.remove("active");
+    count = count + 1;
+    answerLists[count].classList.add("active");
+    currentScore = 1;
+    getData().then((res) => {
+      renderQuestions(res);
 
-    return true;
-  });
-  types[count].classList.add("active");
-  resetAbout();
-  nextButton.disabled = true;
+      return true;
+    });
+    types[count].classList.add("active");
+    resetAbout();
+    nextButton.disabled = true;
+  } else {
+    count = 6;
+    types[5].classList.remove("active");
+    types[0].classList.add("active");
+    correctImage.src = "../img/shadow-bird.jpg";
+    correctName.textContent = "******";
+    mainBlock.classList.add("hidden");
+    finalBlock.classList.remove("hidden");
+  }
+});
+
+tryAgain.addEventListener("click", () => {
+  location.reload();
 });
