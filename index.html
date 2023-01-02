@@ -8,5 +8,205 @@
     <link rel="stylesheet" href="css/style.min.css" />
     <link rel="stylesheet" href="css/style.min.css.map" />
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <div class="header__logo">
+            <span class="header__logo-left">Song</span>
+            <span class="header__logo-right">Bird</span>
+          </div>
+          <div class="header__score">
+            Score: <span class="header__score-count">0</span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="types">
+      <div class="container">
+        <ul class="types__list">
+          <li class="types__list-item active">Warm up</li>
+          <li class="types__list-item">Passerines</li>
+          <li class="types__list-item">Forest birds</li>
+          <li class="types__list-item">Songbirds</li>
+          <li class="types__list-item">Predator birds</li>
+          <li class="types__list-item">Sea birds</li>
+        </ul>
+      </div>
+    </section>
+    <section class="question">
+      <div class="container">
+        <div class="question__wrapper">
+          <div class="question__image">
+            <img src="img/shadow-bird.png" alt="Shadow bird" />
+          </div>
+          <div class="queastion__main">
+            <h2 class="qustion__bird-name">******</h2>
+            <div class="question__player">
+              <audio class="question__audio" controls src=""></audio>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="answers">
+      <div class="container">
+        <div class="answers__wrapper">
+          <div class="answers__list-block">
+            <ul class="answers__list active">
+              <li class="answers__item">
+                <button class="answers__btn">Raven</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Shadoof</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Swallow</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Nightjar</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Cuckoo</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Tit</button>
+              </li>
+            </ul>
+            <ul class="answers__list">
+              <li class="answers__item">
+                <button class="answers__btn">Sparrow</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Rook</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Jackdaw</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Songthrush</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Magpie</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Jay</button>
+              </li>
+            </ul>
+            <ul class="answers__list">
+              <li class="answers__item">
+                <button class="answers__btn">Finch</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Crossbill</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Turtledove</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Woodpecker</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Hoopoe</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Swift</button>
+              </li>
+            </ul>
+            <ul class="answers__list">
+              <li class="answers__item">
+                <button class="answers__btn">Lark</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Nightingale</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Starling</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Oriole</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Waxwing</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Goldfinch</button>
+              </li>
+            </ul>
+            <ul class="answers__list">
+              <li class="answers__item">
+                <button class="answers__btn">Eagle</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Kite</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Harrier</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Falcon</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Hawk</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Eagle owl</button>
+              </li>
+            </ul>
+            <ul class="answers__list">
+              <li class="answers__item">
+                <button class="answers__btn">Albatross</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Gannet</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Petrel</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Pelican</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Penguin</button>
+              </li>
+              <li class="answers__item">
+                <button class="answers__btn">Seagull</button>
+              </li>
+            </ul>
+          </div>
+          <div class="answers__about">
+            <p>
+              Listen to the player.<br />
+              Select a bird from the list
+            </p>
+            <div class="answers__about-full hidden">
+              <div class="answers__about-full--wrapper">
+                <div class="answers__about-full--img">
+                  <img src="img/shadow-bird.png" alt="Alt" />
+                </div>
+                <div class="answers__about-full--short">
+                  <h3 class="answers__about-full--name">Raven</h3>
+                  <h5 class="answers__about-full--subname">Corvus corax</h5>
+                  <audio
+                    class="answers__about-full--audio"
+                    src=""
+                    controls
+                  ></audio>
+                </div>
+                <div class="answers__about-full--long">
+                  Raven is a large bird. The body length reaches 70 centimeters,
+                  the wingspan is up to one and a half meters. Ravens inhabit
+                  the vicinity of the Tower. There is a belief in England that
+                  the day the black crows fly away from the Tower, the monarchy
+                  will collapse.
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="answers__next" disabled>Next level</button>
+        </div>
+      </div>
+    </section>
+    <script src="js/main.js"></script>
+  </body>
 </html>
