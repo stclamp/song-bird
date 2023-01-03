@@ -20,7 +20,7 @@ img {
 }
 
 .container {
-  width: 1250px;
+  width: 1199px;
   margin: 0 auto;
 }
 
@@ -59,7 +59,7 @@ img {
     border-radius: 10px;
 
     &-item {
-      padding: 20px 55px;
+      padding: 20px 50px;
       &:first-child {
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
@@ -275,6 +275,7 @@ img {
     background-color: #9aa05b;
     transition: 0.5s ease;
     font-size: 20px;
+    border-radius: 10px;
 
     &:hover {
       background-color: #e3b448;
@@ -327,5 +328,22 @@ img {
     &:hover {
       background-color: #e3b448;
     }
+  }
+}
+
+.footer {
+  margin-top: 40px;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__developer {
+    margin-right: 20px;
+  }
+
+  &__link img {
+    width: 40px;
   }
 }
